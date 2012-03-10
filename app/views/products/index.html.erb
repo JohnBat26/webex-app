@@ -1,26 +1,60 @@
-<h1>Products</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Created at</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.id %></td>
-        <td><%= link_to product.name, product_path(product) %></td>
-        <td><%= product.created_at %></td>
-        <td>
-          <%= link_to 'Edit', edit_product_path(product), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', product_path(product), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#1" data-toggle="tab">Products</a></li>
+        <li><a href="#2" data-toggle="tab">Section 2</a></li>
+        <li><a href="#3" data-toggle="tab">Section 3</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="1">
+            <h1>Products</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Created at</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @products.each do |product| %>
+                    <tr>
+                        <td><%= product.id %></td>
+                        <td><%= link_to product.name, product_path(product) %></td>
+                        <td><%= product.created_at %></td>
+                        <td>
+                            <%= link_to 'Edit', edit_product_path(product), :class => 'btn btn-mini' %>
+                            <%= link_to 'Destroy', product_path(product), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+                        </td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
 
-<%= link_to 'New', new_product_path, :class => 'btn btn-primary' %>
+            <%= link_to 'New', new_product_path, :class => 'btn btn-primary' %>
+        </div>
+
+        <div class="tab-pane" id="2">
+
+
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+                labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+                beer
+                twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+                cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+                salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
+                sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+        </div>
+
+        <div class="tab-pane" id="3">
+
+
+            <p>Bring your tabs to life with a simple plugin to toggle between content via tabs. Bootstrap integrates
+                tabbable tabs in four styles: top (default), right, bottom, and left.
+
+                Changing between them is easy and only requires changing very little markup.</p>
+        </div>
+
+    </div>
+</div>
